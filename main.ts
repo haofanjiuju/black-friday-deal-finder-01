@@ -12,7 +12,7 @@
 // Run it outside the grader with MAKEFUN_OUTPUT_DIR standing in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
@@ -21,8 +21,12 @@ const repoRoot = fileURLToPath(new URL('.', import.meta.url));
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 // Start from an empty output directory so a stale file can never ride along.
-rmSync(outputDir, { recursive: true, force: true });
+// Never remove the output directory itself: in the grader it is a mount
+// point, and deleting it fails. Only clear its contents.
 mkdirSync(outputDir, { recursive: true });
+for (const entry of readdirSync(outputDir)) {
+  rmSync(join(outputDir, entry), { recursive: true, force: true });
+}
 
 cpSync(join(repoRoot, 'app'), join(outputDir, 'app'), { recursive: true });
 if (existsSync(join(repoRoot, 'screenshots'))) {
