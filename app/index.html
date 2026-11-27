@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealSleuth — Real Black Friday &amp; Cyber Monday Deals 2026</title>
+<meta name="description" content="30 real Black Friday and Cyber Monday deals, price-checked on 2026-11-27 at Amazon, Best Buy, Walmart and Target, with an honest verdict on each one.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Black Friday 2026 &middot; Cyber Monday Nov 30</p>
+    <h1>Deal<span>Sleuth</span></h1>
+    <p class="tagline">Real deals, checked today — not inflated “was” prices. Every price below was read at the named store on <strong>27 November 2026</strong>.</p>
+    <dl class="stats" id="stats">
+      <div><dt>Deals checked</dt><dd id="stat-count">–</dd></div>
+      <div><dt>Average discount</dt><dd id="stat-avg">–</dd></div>
+      <div><dt>Biggest saving</dt><dd id="stat-best">–</dd></div>
+      <div><dt>Stores</dt><dd id="stat-stores">–</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <section class="controls" aria-label="Search and filter deals">
+    <label class="search-box">
+      <span class="visually-hidden">Search deals</span>
+      <input id="search" type="search" placeholder="Search a product, brand or store…" autocomplete="off">
+    </label>
+    <label>Category
+      <select id="category">
+        <option value="">All categories</option>
+      </select>
+    </label>
+    <label>Store
+      <select id="store">
+        <option value="">All stores</option>
+      </select>
+    </label>
+    <label>Min. discount
+      <select id="min-discount">
+        <option value="0">Any discount</option>
+        <option value="25">25% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="sort">
+        <option value="discount">Biggest discount</option>
+        <option value="saving">Biggest saving ($)</option>
+        <option value="price-asc">Lowest price</option>
+        <option value="price-desc">Highest price</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </label>
+    <button id="reset" type="button">Clear filters</button>
+  </section>
+
+  <p class="verdict-key" aria-label="How to read the verdict badges">
+    <strong>Is it really a deal?</strong>
+    <span class="badge badge-low">True deal</span> new low or near it ·
+    <span class="badge badge-strong">Strong price</span> a genuine cut ·
+    <span class="badge badge-decent">Decent</span> a real but modest cut ·
+    <span class="badge badge-routine">Routine</span> the usual sale price
+  </p>
+
+  <p id="result-count" class="result-count" role="status"></p>
+  <section id="deals" class="deal-grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>No deals match those filters. Try clearing the search or lowering the minimum discount.</p>
+
+  <section class="how">
+    <h2>How these deals were checked</h2>
+    <p>On <strong>27 November 2026</strong> the agent behind this site read each price at the named store — Amazon, Best Buy, Walmart or Target — or in a deals roundup that names the store, and recorded the sale price, the usual price and the source. A deal is marked <em>True deal</em> only when its price is a new low or close to one; a modest cut on a new product is marked <em>Decent</em>, not dressed up. Prices can move during the sale — always confirm the live price at the store before buying.</p>
+    <p class="fineprint">DealSleuth is an independent finder. Store names and product names belong to their owners; links open the product at the store. Prices in USD, checked 2026-11-27.</p>
+  </section>
+</main>
+
+<footer>
+  <p>DealSleuth · Black Friday 2026 · 30 deals checked 27 Nov 2026 · No trackers, no network requests — the whole site is static files.</p>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
